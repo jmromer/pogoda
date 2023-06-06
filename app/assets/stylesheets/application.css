@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.condition-icon {
+  max-width: 30px;
+  height: auto;
+  display: inline-block;
+}

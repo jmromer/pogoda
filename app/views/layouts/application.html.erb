@@ -11,9 +11,23 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="relative bg-gray-900 h-screen">
+    <main data-controller="application">
       <%= yield %>
     </main>
+
+    <script type="text/javascript">
+      // Remove 1Password from page
+      new MutationObserver(mutations => {
+        for (const { addedNodes } of mutations) {
+          for (const node of addedNodes) {
+            if (node.tagName === 'COM-1PASSWORD-BUTTON' ||
+                node.tagName === 'COM-1PASSWORD-MENU') {
+              node.parentNode.removeChild(node)
+            }
+          }
+        }
+      }).observe(document.body, { childList: true })
+    </script>
   </body>
 </html>
