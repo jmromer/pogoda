@@ -38,7 +38,7 @@ module WeatherAPI
         @date = payload[:date].to_date
         @daily = payload[:day]
         @min = daily[:mintemp_f]
-        @max = daily[:mintemp_f]
+        @max = daily[:maxtemp_f]
         @chance_of_rain = daily[:daily_chance_of_rain]
       end
 
