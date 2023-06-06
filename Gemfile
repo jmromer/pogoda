@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby File.read(".ruby-version").strip
+ruby "3.1.3"
 
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "dotenv-rails" # 12-factor env var handling [https://github.com/bkeepers/dotenv]
@@ -27,6 +27,7 @@ group :development do
   gem "better_errors" # (https://github.com/BetterErrors/better_errors)
   gem "binding_of_caller"
   gem "bundler-gtags", github: "jmromer/bundler-gtags" # (https://github.com/kayhide/bundler-gtags)
+  gem "dockerfile-rails", ">= 1.4"
   gem "letter_opener"
   gem "rufo" # autoformatting (https://github.com/ruby-formatter/rufo)
   gem "spring-commands-rspec"

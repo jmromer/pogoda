@@ -3,7 +3,7 @@
 class WelcomeController < ApplicationController
   def index
     @query = params[:query]
-    @condition_image_url = ENV.fetch("DEFAULT_CONDITION_IMAGE_URL")
+    @condition_image_url = ENV.fetch("DEFAULT_CONDITION_IMAGE_URL", nil)
     return if @query.blank?
 
     @forecast = get_forecast(@query)
