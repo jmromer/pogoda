@@ -1,17 +1,22 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["form", "query", "loadingResults"];
+  static targets = ["form", "query", "results", "loadingResults"];
 
   connect() {
     if ("geolocation" in navigator && !this.queryTarget.value) {
       const placeholder = this.queryTarget.placeholder;
-      this.queryTarget.placeholder = "loading your location...";
+      this.queryTarget.placeholder = "detecting your location...";
 
       navigator.geolocation.getCurrentPosition(
         ({ coords }) => {
           const { latitude, longitude } = coords;
-          this.queryTarget.value = `${latitude},${longitude}`;
+          const input = this.queryTarget;
+
+          input.setAttribute("value", `${latitude},${longitude}`);
+          input.selectionStart = input.selectionEnd = input.value.length;
+          input.focus();
+
           this.getForecast();
         },
         () => {
@@ -23,6 +28,7 @@ export default class extends Controller {
 
   getForecast() {
     this.loadingResultsTarget.hidden = false;
+    this.resultsTarget.hidden = true;
     this.formTarget.submit();
   }
 }

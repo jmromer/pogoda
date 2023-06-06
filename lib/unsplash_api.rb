@@ -22,13 +22,13 @@ class UnsplashAPI
     }
   end
 
-  def random(query)
+  def random_search(query)
     return if query.blank?
 
-    query = { query: query, page: 1, per_page: 1 }
+    query = { query: query, page: rand(1..50), per_page: 10 }
     resp = self.class.get("/search/photos", query: query, headers: headers)
     return unless resp.code == 200
 
-    resp.parsed_response.dig(:results, 0, :urls, :small)
+    resp.parsed_response[:results].sample.dig(:urls, :regular)
   end
 end

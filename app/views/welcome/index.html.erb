@@ -1,7 +1,9 @@
 <div class="absolute bottom-0 h-80 w-full xl:inset-0 xl:h-full">
   <div class="h-full w-full xl:grid xl:grid-cols-2">
     <div class="h-full xl:relative xl:col-start-2">
-      <%= image_tag @condition_image_url, class: "h-full w-full object-cover opacity-25 xl:absolute xl:inset-0" %>
+      <% if @condition_image_url.present? %>
+        <%= image_tag @condition_image_url, class: "h-full w-full object-cover opacity-25 xl:absolute xl:inset-0" %>
+      <% end %>
       <div aria-hidden="true" class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-900 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"></div>
     </div>
   </div>
@@ -18,7 +20,11 @@
               autofocus: :on,
               autocomplete: :off,
               required: true,
-              data: { lpignore: true, application_target: "query", action: "change->application#getForecast" },
+              data: {
+                lpignore: true,
+                application_target: "query",
+                action: "change->application#getForecast"
+              },
               class: "block w-full border-0 p-0 my-1 bg-gray-700 text-white placeholder-gray-400 focus:ring-0 sm:text-sm" %>
         </div>
       <% end %>
@@ -29,8 +35,9 @@
         loading 5-day forecast...
       </span>
 
-      <% if @forecast.present? %>
-        <div>
+      <div data-application-target="results">
+        <% if @forecast.present? %>
+          <span class="text-xs text-white"><%= "(using cached results)" if @cached_forecast %></span>
           <div class="my-6">
             <span class="block text-xl font-bold text-white">
               Current Conditions
@@ -59,7 +66,7 @@
             </div>
           <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
