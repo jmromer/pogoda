@@ -30,14 +30,11 @@ To start the development server using foreman, issue `bin/dev` and navigate to
 bin/dev
 ```
 
-## Testing
+## Screenshots
 
-```shell
-pogoda master % bin/rspec
-.....
+![screenshot: desktop](app/assets/images/screenshot_desktop.jpg)
 
-Finished in 0.03725 seconds (files took 3.94 seconds to load)
-5 examples, 0 failures
-```
+![screenshot: mobile](app/assets/images/screenshot_mobile.jpg)
+
 
 [asdf]: https://github.com/asdf-vm/asdf
