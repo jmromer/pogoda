@@ -40,6 +40,9 @@ Metrics/BlockLength:
   Max: 25
   AllowedMethods: ["describe", "context", "it"]
 
+Metrics/MethodLength:
+  Max: 25
+
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: "comma"
 
