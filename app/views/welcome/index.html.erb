@@ -1,6 +1,6 @@
-<div class="absolute bottom-0 h-80 w-full xl:inset-0 xl:h-full">
-  <div class="h-full w-full xl:grid xl:grid-cols-2">
-    <div class="h-full xl:relative xl:col-start-2">
+<div class="absolute bottom-0 h-80 w-full xl:inset-0 h-full">
+  <div class="h-full w-full xl:grid xl:grid-cols-1">
+    <div class="h-full xl:relative xl:col-start-1">
       <% if @condition_image_url.present? %>
         <%= image_tag @condition_image_url, class: "h-full w-full object-cover opacity-25 xl:absolute xl:inset-0" %>
       <% end %>
@@ -12,7 +12,7 @@
   <div class="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
     <h2 class="text-base font-semibold text-indigo-300 mb-4">погода</h2>
     <p>
-      <%= form_with url: root_path, method: :get, data: { application_target: "form" }, class: "w-3/4 relative" do %>
+      <%= form_with url: root_path, method: :get, data: { application_target: "form" }, class: "sm:w-3/4 relative" do %>
         <%= label_tag :query, "Location", class: "block text-sm font-medium text-white" %>
         <div class="relative rounded-md border border-gray-500 bg-gray-700 px-3 py-2 my-2 shadow-sm focus-within:border-slate-400 focus-within:ring-1 focus-within:ring-slate-700">
           <%= text_field_tag :query, @location || @query,
@@ -30,7 +30,7 @@
       <% end %>
     </p>
 
-    <div class="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-1">
+    <div class="mt-10 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-1">
       <span data-application-target="loadingResults" class="text-white text-sm" hidden>
         loading 5-day forecast...
       </span>
