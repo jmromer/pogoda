@@ -1,24 +1,43 @@
-# README
+# погода
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
 
-Things you may want to cover:
+- Ruby 3
+- Rails 7
+- PostgreSQL
+- Redis
 
-* Ruby version
+## Installation
 
-* System dependencies
+To install base requirements with [ASDF][]:
 
-* Configuration
+```shell
+asdf install
+```
 
-* Database creation
+To install required dependencies and prepare the database:
 
-* Database initialization
+```shell
+bin/setup
+```
 
-* How to run the test suite
+## Development
 
-* Services (job queues, cache servers, search engines, etc.)
+To start the development server using foreman, issue `bin/dev` and navigate to
+[http://127.0.0.1:5000](http://127.0.0.1:5000):
 
-* Deployment instructions
+```shell
+bin/dev
+```
 
-* ...
+## Testing
+
+```shell
+pogoda master % bin/rspec
+.....
+
+Finished in 0.03725 seconds (files took 3.94 seconds to load)
+5 examples, 0 failures
+```
+
+[asdf]: https://github.com/asdf-vm/asdf
