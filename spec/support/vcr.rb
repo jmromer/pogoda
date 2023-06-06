@@ -17,6 +17,10 @@ VCR.configure do |config|
 
   # Filter sensitive data
   # https://relishapp.com/vcr/vcr/v/6-0-0/docs/configuration/filter-sensitive-data
+  config.filter_sensitive_data("<API_KEY>") do
+    Rails.application.credentials.weather_api_key
+  end
+
   config.before_record do |interaction|
     interaction.response.headers.delete("Set-Cookie")
     interaction.request.headers.delete("Authorization")
