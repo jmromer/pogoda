@@ -241,3 +241,6 @@ tags
 [._]*.un~
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,emacs,git,macos,ruby,rails
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
