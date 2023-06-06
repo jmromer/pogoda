@@ -6,17 +6,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby File.read(".ruby-version").strip
 
 gem "bootsnap", require: false # Reduces boot times through caching; required in config/boot.rb
+gem "dotenv-rails" # 12-factor env var handling [https://github.com/bkeepers/dotenv]
 gem "draper" # (https://github.com/arjes/draper)
+gem "httparty" # HTTP requests library (https://github.com/jnunemaker/httparty)
 gem "importmap-rails" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "jbuilder" # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "puma", "~> 5.0" # Use the Puma web server [https://github.com/puma/puma]
 gem "rails", "~> 7.0.4" # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "redis", "~> 4.4.0" # Cache datastore [https://github.com/redis/redis-rb]
 gem "sassc-rails"
 gem "sprockets-rails" # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "stimulus-rails" # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "tailwindcss-rails" # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "terser" # (https://github.com/ahorek/terser-ruby)
+gem "to_bool" # boolean parsing, useful for env vars [https://github.com/bricker/to_bool]
 gem "turbo-rails" # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -55,4 +59,5 @@ group :test do
   gem "rails-controller-testing" # (https://github.com/rails/rails-controller-testing)
   gem "shoulda-matchers" # (https://github.com/thoughtbot/shoulda-matchers)
   gem "simplecov", require: false # (https://github.com/simplecov-ruby/simplecov)
+  gem "simplecov-console", require: false
 end
