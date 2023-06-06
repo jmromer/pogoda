@@ -24,7 +24,7 @@ bin/setup
 ## Development
 
 To start the development server using foreman, issue `bin/dev` and navigate to
-[http://127.0.0.1:5000](http://127.0.0.1:5000):
+[http://127.0.0.1:3000](http://127.0.0.1:3000):
 
 ```shell
 bin/dev
