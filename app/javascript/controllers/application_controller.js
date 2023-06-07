@@ -31,4 +31,8 @@ export default class extends Controller {
     this.resultsTarget.hidden = true;
     this.formTarget.submit();
   }
+
+  clearInput() {
+    this.queryTarget.value = "";
+  }
 }
