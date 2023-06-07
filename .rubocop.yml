@@ -84,3 +84,6 @@ Style/RegexpLiteral:
 # Favor modifier if/unless usage when you have a single-line body. (Disabled)
 Style/IfUnlessModifier:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

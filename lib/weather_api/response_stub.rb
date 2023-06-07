@@ -1,6 +1,7 @@
 # -*- mode: fundamental -*-
 # frozen_string_literal: true
 
+# TEMP: This module is used as a stubbed response for development
 module WeatherAPI
   module ResponseStub
     def response_body

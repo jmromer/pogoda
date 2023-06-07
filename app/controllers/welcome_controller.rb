@@ -6,9 +6,12 @@ class WelcomeController < ApplicationController
     @condition_image_url = ENV.fetch("DEFAULT_CONDITION_IMAGE_URL", nil)
     return if @query.blank?
 
-    @forecast = get_forecast(@query)
-    @condition_image_url = UnsplashAPI.new.random_search(@forecast&.current_condition)
-    @location = @forecast&.location
+    if (@forecast = get_forecast(@query))
+      @condition_image_url = UnsplashAPI.new.random_search(@forecast&.current_condition)
+      @location = @forecast&.location
+    else
+      @query.clear
+    end
   end
 
   private
