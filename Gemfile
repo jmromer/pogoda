@@ -56,6 +56,7 @@ group :test do
   gem "capybara" # acceptance testing (https://github.com/teamcapybara/capybara)
   gem "database_cleaner-active_record" # (https://github.com/DatabaseCleaner/database_cleaner)
   gem "database_cleaner-redis" # (https://github.com/DatabaseCleaner/database_cleaner-redis)
+  gem "panolint"
   gem "rails-controller-testing" # (https://github.com/rails/rails-controller-testing)
   gem "shoulda-matchers" # (https://github.com/thoughtbot/shoulda-matchers)
   gem "simplecov", require: false # (https://github.com/simplecov-ruby/simplecov)
